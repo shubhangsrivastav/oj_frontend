@@ -1,0 +1,45 @@
+.card{
+    width: 100%;
+
+    max-width: 600px;
+   height: 560px;
+    padding:5rem 2.5rem;
+    border-radius: 1rem;
+    border:1px solid transparent;
+    backdrop-filter:blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0,0,0,0.5);
+    border-top-color:rgba(255,255,255,0.5);
+    border-bottom-color:rgba(255,255,255,0.5);
+    border-right-color:rgba(255,255,255,0.1);
+    border-left-color:rgba(255,255,255,0.1);
+    color:white;
+    padding-top: 10px;
+    margin-top: -20px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right:0px;
+    overflow-Y:auto;
+    
+}
+.cb1{
+    background-color: rgba(255,255,255,0.1);
+}
+.btn{
+    margin-top:20px;
+    margin-bottom:20px;
+    border-radius: 2rem;
+}
+.btn:hover{
+    box-shadow: 0,0.3rem 1rem rgba(0,0,0,0.3) ;
+}
+.card-body{
+    margin-top:10px
+}
+.heading{
+    color:orange;
+    font-weight:"bold";
+    font-size:1.2em;
+}
+.card-text{
+    font-size:1.1em
+}
