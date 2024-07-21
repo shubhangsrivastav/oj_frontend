@@ -73,7 +73,9 @@ return (<>
       }>Signin</Button>
       </div>
         <div className="register-link">
-            <p>Dont't have an account? <a href="/register">Register</a></p>
+            <p>Dont't have an account? <a onClick={()=>{
+              navigate("/register");
+            }}>Register</a></p>
 
         </div>
     </form>
