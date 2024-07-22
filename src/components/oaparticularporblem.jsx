@@ -13,6 +13,7 @@ import { useRecoilValue } from "recoil";
 import { userNameState } from "../store/atom/username";
 import Clock from "./clock";
 const API_BASE_URL=import.meta.env.VITE_API_BASE_URL
+const COMPILER_URL=import.meta.env.VITE_COMPILER_BASE_URL
 
 function OaparticularProblem() {
   const userName=useRecoilValue(userNameState);
@@ -44,7 +45,7 @@ function OaparticularProblem() {
       if(userName!==undefined){
       setVerdict("");
       console.log(testCaseInput);
-      const { data } = await axios.post("http://localhost:8081/run", {
+      const { data } = await axios.post(`${COMPILER_URL}/run`, {
         language: "cpp",
         code,
         testCaseInput
@@ -63,7 +64,7 @@ function OaparticularProblem() {
     try {
       setRunStatus("");
       if(userName!==undefined){
-     const {data}= await axios.post(`http://localhost:8081/submit/${pid}`,{code,language:"cpp",userName});
+     const {data}= await axios.post(`${COMPILER_URL}/${pid}`,{code,language:"cpp",userName});
      console.log(data);
      setVerdict(data.message);}
      else{
