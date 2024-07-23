@@ -53,10 +53,10 @@ return (<>
            const resp =await axios.post(`${API_BASE_URL}/signin`,{
              email:email,password:password
            });
-           console.log(resp.data);
-           console.log(typeof(resp.data.msg));
+          //  console.log(resp.data);
+          //  console.log(typeof(resp.data.msg));
            if(resp.data.msg==="Successfull"){
-             console.log(1);
+            //  console.log(1);
               setType(resp.data.type);
               setUsernameState(resp.data.user.userName);
               localStorage.setItem("token",resp.data.token);
@@ -70,7 +70,7 @@ return (<>
           }
    
          }
-      }>Signin</Button>
+      }>Sign in</Button>
       </div>
         <div className="register-link">
             <p>Dont't have an account? <a onClick={()=>{

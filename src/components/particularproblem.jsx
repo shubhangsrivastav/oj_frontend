@@ -20,7 +20,7 @@ function ParticularProblem() {
   const [code, setCode] = useState(`
     Your Code goes here!`);
     const [verdict,setVerdict]=useState("");
-  console.log(pid);
+  // console.log(pid);
   let [problem, setProblem] = useState();
   let [output,setOutput]=useState("");
   let [testCaseInput,setTestCaseInput]=useState("");
@@ -28,7 +28,7 @@ function ParticularProblem() {
   useEffect(() => {
     axios.get(`${API_BASE_URL}/currentproblem/${pid}`).then((res) => {
       setProblem(res.data.problem);
-      console.log(res.data.problem);
+      // console.log(res.data.problem);
     });
   }, []);
   if (!problem) {
@@ -37,19 +37,19 @@ function ParticularProblem() {
   const changeInput=(e)=>{
     setTestCaseInput(e.target.value);
   }
-  console.log(code);
+  // console.log(code);
   const handleRun = async () => {
     try {
       setRunStatus("");
       if(userName!==undefined){
       setVerdict("");
-      console.log(testCaseInput);
+      // console.log(testCaseInput);
       const { data } = await axios.post(`${COMPILER_URL}/run`, {
         language: "cpp",
         code,
         testCaseInput
       });
-      console.log(data.output);
+      // console.log(data.output);
       setOutput(data.output);}
       else{
         alert("Please Signin!");
@@ -64,7 +64,7 @@ function ParticularProblem() {
       setRunStatus("");
       if(userName!==undefined){
      const {data}= await axios.post(`${COMPILER_URL}/submit/${pid}`,{code,language:"cpp",userName});
-     console.log(data);
+    //  console.log(data);
      setVerdict(data.message);}
      else{
       alert("Please Signin!");

@@ -9,26 +9,26 @@ import axios from "axios";
 function Navbar(){
    const navigate=useNavigate();
  const type=useRecoilValue(typeState);
- console.log(type);
+//  console.log(type);
  const setType=useSetRecoilState(typeState);
  const setUsername=useSetRecoilState(userNameState);
  
  const token=localStorage.getItem("token");
 
  useEffect(()=>{
-    console.log(token);
-    console.log(2);
+    // console.log(token);
+    // console.log(2);
   
       
     try{
 
         if(token!=undefined){
-            console.log(1);
+            // console.log(1);
   axios.get('${API_BASE_URL}/me',{headers:{
     authorisation:"Bearer "+token
   }}).then(resp => {
     
-        console.log(resp.data.userDetails);
+        // console.log(resp.data.userDetails);
         const userDetails=resp.data.userDetails;
         setType(userDetails.type);
         setUsername(userDetails.userName);
